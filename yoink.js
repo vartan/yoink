@@ -11,6 +11,7 @@ function installYoink() {
     document.body.addEventListener("click", onClick);
     window.addEventListener("popstate", onPopState);
     installPreYoink(document.body);
+    addInitialContentToCache();
 
     offscreen.className = "offscreen";
     document.body.appendChild(offscreen);
