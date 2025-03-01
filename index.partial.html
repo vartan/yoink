@@ -5,5 +5,19 @@
     the website detects intent to load a new page (ex. hovering a link).
 </p>
 <p>
-    Check out this<a href="second.html">second page</a> to see an example.
+    Steps required to use yoink:
+<ol>
+    <li>Wrap the dynamic part of your website in an element with the ID and className
+        <code>yoink-content</code>.
+    </li>
+    <li>For each static page, make a <code>.partial.html</code> equivalent which contains only the contents of
+        the
+        <code>yoink-content</code> block. For example, if you have <code>foo.html</code> make a sibling
+        <code>foo.partial.html</code>.
+    </li>
+    <li>Add <code>yoink.js</code> to your pages.</li>
+</ol>
+</p>
+<p>
+    Check out this <a href="second.html">second page</a> to see an example.
 </p>
