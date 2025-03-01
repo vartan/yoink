@@ -2,6 +2,7 @@ const yoinkCache = {};
 
 function installYoink() {
     let path = window.location.href;
+    console.log("initial location: "+path);
     path = toPartialUrl(path);
     yoinkCache[path] = document.getElementById("yoink-content").innerHTML;
     document.body.addEventListener("click", onClick);
@@ -78,13 +79,12 @@ async function yoink(href, skipPushState) {
 }
 
 function toPartialUrl(href) {
-    let url;
     if (href.endsWith("/")) {
-        url += "index.partial.html";
+        href += "index.partial.html";
     } else {
-        url = href.replace(/.html$/, ".partial.html");
+        href = href.replace(/.html$/, ".partial.html");
     }
-    return url;
+    return href;
 }
 
 function onPopState(event) {
