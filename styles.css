@@ -85,3 +85,8 @@ body {
     height: 1px;
     overflow: hidden;
 }
+
+#yoink-content img {
+    max-width: 100%;
+    object-fit: contain;
+}
