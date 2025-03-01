@@ -29,11 +29,18 @@ function onClick(event) {
         return;
     }
     if (target.tagName.toLowerCase() == "a") {
-        if (target.href.endsWith(".html")) {
+        const href = target.href;
+        if (isSupportedLink(href)) {
             event.preventDefault();
-            yoink(target.href);
+            yoink(href);
         }
     }
+}
+
+/** Whether a link supports prefetching. */
+function isSupportedLink(href) {
+    // TODO: implement this more thoughtfully. Hastily implemented for github link.
+    return href.indexOf("//") < 0 || href.indexOf(window.location.origin) >= 0;
 }
 
 /** Installs hover listener on all descendent anchors. */
@@ -52,7 +59,7 @@ function installPreYoink(root) {
 /** Prefetches hovered links ending with .html. */
 function onHoverLink(event) {
     const target = event.target;
-    if (target.href.endsWith(".html")) {
+    if (isSupportedLink(target.href)) {
         preYoink(target.href);
     }
 }
@@ -149,7 +156,7 @@ function preRender(url, content, installOffscreen) {
     element.className = "yoink-content";
     element.innerHTML = content;
     yoinkCache[url] = element;
-    if(installOffscreen !== false) {
+    if (installOffscreen !== false) {
         offscreen.appendChild(element);
         maybeHideAfterRender(element);
     }
@@ -167,7 +174,7 @@ function maybeHideAfterRender(element) {
         // Executed before the next frame is painted.
         setTimeout(() => {
             // Executed after the next frame is painted.
-            if(element.parentNode === offscreen) {
+            if (element.parentNode === offscreen) {
                 element.classList.add("yoink-hidden");
             }
         })
