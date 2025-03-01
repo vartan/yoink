@@ -25,6 +25,9 @@ function addInitialContentToCache() {
 /** Body onclick listener for intercepting anchor clicks. */
 function onClick(event) {
     const target = event.target;
+    if (window.event.metaKey || event.button !== 0) {
+        return;
+    }
     if (target.tagName.toLowerCase() == "a") {
         if (target.href.endsWith(".html")) {
             event.preventDefault();
