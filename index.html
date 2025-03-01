@@ -25,7 +25,6 @@
             Check out this <a href="second.html">second page</a> to play around with navigation.
         </p>
         <h2>How to use yoink</h2>
-        <p>
         <ol>
             <li>Wrap the dynamic part of your website in an element with the ID and className
                 <code>yoink-content</code>.
@@ -37,16 +36,15 @@
             </li>
             <li>Add <code>yoink.js</code> to your pages.</li>
         </ol>
-        </p>
         <h2>How yoink works</h2>
         <p>
             Links are pre-fetched under the following conditions:
+        </p>
         <ul>
             <li>When the pointer moves over the link (for mouses and touchpads)</li>
             <li>When a touch starts (for touch screens)</li>
             <li>When it is focused (for screen readers and keyboard-navigators)</li>
         </ul>
-        </p>
         <p>
             Once a link is prefetched, it is rendered in an offscreen element in order to preload any contained images,
             as well as to minimize layout costs for later. After it is painted, it is styled with
@@ -56,6 +54,14 @@
         <p>
             When the link is clicked, the currently displayed content is swapped with the hidden offscreen content.
         </p>
+        <h2>TODOs & future ideas</h2>
+        <ul>
+            <li>Disable prefetching for external & unsupported links.</li>
+            <li>Consider using service worker for offline caching.</li>
+            <li>Convert to TypeScript.</li>
+            <li>Integrate with a static site generator.</li>
+        </ul>
+
     </div>
 
     <div class="footer">No feet for free.</div>
