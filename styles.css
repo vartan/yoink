@@ -1,0 +1,74 @@
+:root {
+    --side-margin: 2%;
+}
+
+@media only screen and (min-width: 600px) {
+    :root {
+        --side-margin: 10%;
+    }
+}
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font: 12pt 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+    background-color: #FFF5f5;
+}
+
+.header {
+    font-size: 2rem;
+    background: #CDF;
+    padding: 0 var(--side-margin);
+}
+
+.nav {
+    padding: 0 var(--side-margin);
+    margin: 0;
+    width: 100%;
+    background: #BCF;
+    border-top: 1px solid #9AF;
+    border-bottom: 1px solid #78f;
+
+}
+
+.nav li {
+    list-style-type: none;
+    display: inline-block;
+}
+
+.nav li a {
+    color: #00F;
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    text-decoration: none;
+    margin-right: 1rem;
+}
+.nav li a:hover {
+    text-shadow: 0 0 3px white;
+}
+#yoink-content {
+    margin: 0 var(--side-margin);
+    background-color: white;
+    min-height: calc(100% - 200px);
+    border-radius: 0 0 5px 5px;
+    /* box-shadow: 0 0 10px rgba(1,1,1,0.5); */
+    border-style: solid;
+    border-color: black;
+    border-width: 0 1px 1px 1px;
+
+    padding: 1rem;
+}
+
+.footer {
+    margin: 0 var(--side-margin);
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    color: #aaa;
+    font-size: 0.75rem;
+    line-height: 2rem;
+}
