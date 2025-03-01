@@ -23,6 +23,7 @@ body {
     font-size: 2rem;
     background: #CDF;
     padding: 0 var(--side-margin);
+    box-sizing: border-box;
 }
 
 .nav {
@@ -32,7 +33,7 @@ body {
     background: #BCF;
     border-top: 1px solid #9AF;
     border-bottom: 1px solid #78f;
-
+    box-sizing: border-box;
 }
 
 .nav li {
@@ -52,7 +53,7 @@ body {
     /* text-shadow: 0 0 3px white; */
     transform: scale(1.1);
 }
-#yoink-content {
+#yoink-content, .yoink-content {
     margin: 0 var(--side-margin);
     background-color: white;
     min-height: calc(100% - 200px);
@@ -65,6 +66,10 @@ body {
     padding: 1rem;
 }
 
+.yoink-hidden {
+    display: none;
+}
+
 .footer {
     margin: 0 var(--side-margin);
     text-align: center;
@@ -72,4 +77,11 @@ body {
     color: #aaa;
     font-size: 0.75rem;
     line-height: 2rem;
+}
+
+.offscreen {
+    position: absolute;
+    top: -100px;
+    height: 1px;
+    overflow: hidden;
 }
